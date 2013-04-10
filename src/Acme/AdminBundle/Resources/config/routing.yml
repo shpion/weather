@@ -1,0 +1,11 @@
+acme_admin_homepage:
+    pattern:  /admin
+    defaults: { _controller: AcmeAdminBundle:Default:index }
+
+admin_login:
+    pattern: /login
+    defaults: { _controller: AcmeAdminBundle:Security:login }
+
+admin_login_check:
+    pattern: /login_check
+    defaults: { _controller: AcmeAdminBundle:Security:login_check }

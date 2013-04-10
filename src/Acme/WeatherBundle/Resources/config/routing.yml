@@ -1,0 +1,7 @@
+weather_homepage:
+    pattern:  /weather/
+    defaults: { _controller: AcmeWeatherBundle:Default:index }
+
+weather_city:
+    pattern:  /weather/{city}
+    defaults: { _controller: AcmeWeatherBundle:Default:weatherCity, _format: json }

@@ -1,0 +1,12 @@
+acme_weather:
+    resource: "@AcmeWeatherBundle/Resources/config/routing.yml"
+    prefix:   /
+
+acme_admin:
+    resource: "@AcmeAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+acme_store:
+    resource: "@AcmeStoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
