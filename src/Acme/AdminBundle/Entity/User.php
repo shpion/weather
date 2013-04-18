@@ -3,7 +3,7 @@
 namespace Acme\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\UserInterface;
+
 
 /**
  * User
@@ -11,7 +11,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Acme\AdminBundle\Entity\UserRepository")
  */
-class User implements UserInterface
+class User
 {
     /**
      * @var integer

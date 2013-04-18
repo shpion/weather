@@ -1,1 +1,77 @@
-Admin side
+{% extends 'AcmeAdminBundle::layout.html.twig' %}
+
+{% block content %}
+
+    <script type="text/javascript">
+//        $(document).ready(function(){
+//            $('.name input').val('');
+//            $('.endpoint input').val('');
+//            $('.parser input').val('');
+//        })
+
+        function onChange(id, url){
+            if ($('#id_'+id + ' input').attr("checked"))
+                $('#id_'+id).removeClass('disabled');
+            else
+                $('#id_'+id).addClass('disabled');
+
+            $.ajax({
+                async:false,
+                url: url,
+                type:'GET',
+                success: function(data) {
+                    if(data == 0)
+                        alert('Houston, we have a problem!');
+                }
+            });
+        }
+    </script>
+
+    <table class="endpoints_list">
+        <tr>
+            <th style="width: 62px;">
+                Enabled
+            </th>
+            <th style="width: 150px;">
+                Service Name
+            </th>
+            <th style="width: 516px;">
+                Endpoint
+            </th>
+            <th style="width: 100px;">
+                Parser Name
+            </th>
+        </tr>
+        {% for endpoint in endpoints %}
+            <tr {% if endpoint['enabled'] == 0 %} class="disabled" {% endif %} id="id_{{ endpoint['id'] }}">
+                <td id="123" style="text-align: center;"><input type="checkbox" {% if endpoint['enabled'] == 1 %} checked {% endif %} onchange="onChange({{ endpoint['id'] }}, '{{ path('disabled_endpoint', { 'id':endpoint['id'] }) }}')"/></td>
+                <td>{{ endpoint['serviceName'] }}</td>
+                <td>{{ endpoint['endpoint'] }}</td>
+                <td>{{ endpoint['parser'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <div class="add_form">
+        <form  method="post" {{ form_enctype(form) }}>
+            {{ form_errors(form) }}
+            <div class="enabl">
+                {{ form_widget(form.enabled) }}
+            </div>
+            <div class="name">
+                {{ form_widget(form.serviceName) }}
+                {{ form_errors(form.serviceName) }}
+            </div>
+            <div class="endpoint">
+                {{ form_widget(form.endpoint) }}
+                {{ form_errors(form.endpoint) }}
+            </div>
+            <div class="parser">
+                {{ form_widget(form.parser) }}
+                {{ form_errors(form.parser) }}
+            </div>
+            {{ form_rest(form) }}
+            <input type="submit" value="Add" class="submit" />
+        </form>
+    </div>
+
+{% endblock %}

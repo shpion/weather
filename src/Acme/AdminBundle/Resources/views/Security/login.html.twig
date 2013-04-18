@@ -1,18 +1,22 @@
-{% if error %}
-    <div>{{ error.message }}</div>
-{% endif %}
+{% extends 'AcmeAdminBundle::layout.html.twig' %}
 
-<form action="{{ path('admin_login_check') }}" method="post">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+{% block content %}
+    {% if error %}
+        <div>{{ error.message }}</div>
+    {% endif %}
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="_password" />
+    <form action="{{ path('admin_login_check') }}" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="_username" value="{{ last_username }}" />
 
-    {#
-        Если вы хотите контролировать URL, на который перенаправить пользователя:
-        <input type="hidden" name="_target_path" value="/account" />
-    #}
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="_password" />
 
-    <input type="submit" name="login" value="Login" />
-</form>
+        {#
+            Если вы хотите контролировать URL, на который перенаправить пользователя:
+            <input type="hidden" name="_target_path" value="/account" />
+        #}
+
+        <input type="submit" name="login" value="Login" />
+    </form>
+{% endblock %}

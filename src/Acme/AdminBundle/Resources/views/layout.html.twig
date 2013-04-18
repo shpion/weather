@@ -1,0 +1,13 @@
+{% extends "TwigBundle::layout.html.twig" %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="{{ asset('bundles/admin/css/style.css') }}" />
+    <script src="{{ asset('bundles/admin/js/jquery-1.8.3.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="block">
+        {% block content %}{% endblock %}
+    </div>
+{% endblock %}

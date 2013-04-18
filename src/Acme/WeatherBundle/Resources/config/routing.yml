@@ -4,4 +4,4 @@ weather_homepage:
 
 weather_city:
     pattern:  /weather/{city}
-    defaults: { _controller: AcmeWeatherBundle:Default:weatherCity, _format: json }
+    defaults: { _controller: AcmeWeatherBundle:Default:weatherCity, _format: html }

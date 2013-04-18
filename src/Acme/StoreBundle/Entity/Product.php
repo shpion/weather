@@ -5,7 +5,7 @@ namespace Acme\StoreBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="Acme\StoreBundle\Repository\ProductRepository")
+ * @ORM\Entity
  * @ORM\Table(name="product")
  */
 class Product
