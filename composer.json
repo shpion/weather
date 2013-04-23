@@ -17,7 +17,15 @@
         "sensio/framework-extra-bundle": "2.2.*",
         "sensio/generator-bundle": "2.2.*",
         "jms/security-extra-bundle": "1.4.*",
-        "jms/di-extra-bundle": "1.3.*"
+        "jms/di-extra-bundle": "1.3.*",
+        "behat/behat": "@dev",
+        "behat/mink": "@dev",
+        "behat/symfony2-extension": "dev-master",
+        "behat/mink-extension": "*",
+        "behat/mink-selenium2-driver": "dev-master",
+        "behat/mink-browserkit-driver": "dev-master",
+        "behat/mink-sahi-driver": "@dev",
+        "phpunit/phpunit": "3.7.*"
     },
     "scripts": {
         "post-install-cmd": [
@@ -34,9 +42,9 @@
         ]
     },
     "config": {
-        "bin-dir": "bin"
+        "bin-dir": "bin/"
     },
-    "minimum-stability": "alpha",
+    "minimum-stability": "dev",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",

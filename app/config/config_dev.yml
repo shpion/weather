@@ -4,6 +4,7 @@ imports:
 framework:
     router:   { resource: "%kernel.root_dir%/config/routing_dev.yml" }
     profiler: { only_exceptions: false }
+#    test:     ~
 
 web_profiler:
     toolbar: true
@@ -25,5 +26,14 @@ monolog:
 assetic:
     use_controller: true
 
+
+
 #swiftmailer:
 #    delivery_address: me@example.com
+
+#behat: ~
+#
+#behat_mink:
+#    base_url:  http://selfdev/app_test.php/
+#    goutte:     ~   # enable both Goutte
+#    sahi:       ~   # and Sahi session
