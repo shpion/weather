@@ -121,9 +121,9 @@ class DefaultController extends Controller
 
         $output_json = json_encode($output_array);
 
-//        $response = new Response($output_json);
-//        $response->headers->set('Content-Type', 'application/json');
-//        return $response;
+        $response = new Response($output_json);
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
 
         return $this->render('AcmeWeatherBundle:Default:weatherCity.json.twig', array('json' => $output_json));
     }
