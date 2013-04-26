@@ -125,6 +125,6 @@ class DefaultController extends Controller
         $response->headers->set('Content-Type', 'application/json');
         return $response;
 
-        return $this->render('AcmeWeatherBundle:Default:weatherCity.json.twig', array('json' => $output_json));
+//        return $this->render('AcmeWeatherBundle:Default:weatherCity.json.twig', array('json' => $output_json));
     }
 }
