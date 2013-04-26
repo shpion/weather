@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Endpoint
  *
- * @ORM\Table()
+ * @ORM\Table(name="endpoint")
  * @ORM\Entity(repositoryClass="Acme\WeatherBundle\Entity\EndpointRepository")
  */
 class Endpoint

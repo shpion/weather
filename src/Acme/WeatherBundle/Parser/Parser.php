@@ -78,7 +78,8 @@ class Parser
             $weatherObject['temp'] = round(($weather->temperature - 32) * 5/9);
             $weatherObject['weather_desc'] = $weather->summary;
             $weatherObject['pressure'] = $weather->pressure;
-            $weatherObject['wind_direction'] = $this->windDirection($weather->windDir);
+//            $weatherObject['wind_direction'] = $this->windDirection($weather->windDir);
+            $weatherObject['wind_direction'] = '';
             $weatherObject['wind_speed'] = $weather->windSpeed * 1.61;
 
             return $weatherObject;
